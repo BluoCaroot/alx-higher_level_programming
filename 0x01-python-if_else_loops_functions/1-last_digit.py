@@ -5,11 +5,10 @@ mod = (abs(number) % 10)
 
 if number < 0:
     mod = -mod
-print(f"Last digit of {number:d} is {mod:d} and is ", end = "")
+print(f"Last digit of {number:d} is {mod:d} and is ", end="")
 if number > 5:
     print("greater than 5")
 elif mod == 0:
     print("0")
 else:
     print("less than 6 and not 0")
-
