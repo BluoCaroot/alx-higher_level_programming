@@ -1,4 +1,5 @@
 #include "lists.h"
+#include<stdio.h>
 /**
  * is_palindrome - checks if a linked list is a palindrome
  * @head: head of linked list
@@ -6,19 +7,35 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp, *scnd;
+	listint_t *temp, *scnd, *tmp;
+	int i, cnt = 0, f = 1;
 
 	temp = *head;
 	scnd = NULL;
 	while (temp)
 	{
+		cnt++;
+		temp = temp->next;
+	}
+	temp = *head;
+	for (i = 0; i < cnt / 2; ++i)
+	{
 		add_nodeint(&scnd, temp->n);
 		temp = temp->next;
 	}
+	if (cnt % 2)
+		temp = temp->next;
+	tmp = scnd;
+	for (i = 0; f && temp && tmp; ++i)
+	{
+		if (tmp->n != temp->n)
+			f = 0;
+		tmp = tmp->next;
+		temp = temp->next;
+	}
 
-	if (equal(&scnd, head))
-		return (1);
-	return (0);
+	free_listint(scnd);
+	return (f);
 }
 
 /**
@@ -39,29 +56,4 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	*head = new;
 
 	return (new);
-}
-
-/**
- * equal - checks if two linked lists are equal
- * @first: first list
- * @second: second list
- * Return: 1 if equal 0 if not
- */
-int equal(listint_t **first, listint_t **second)
-{
-	listint_t *t1, *t2;
-	int same = 1;
-
-	t1 = *first, t2 = *second;
-
-	while (same && t1 && t2)
-	{
-		if (t1->n != t2->n)
-			same = 0;
-
-		t1 = t1->next;
-		t2 = t2->next;
-	}
-	free_listint(*first);
-	return (same);
 }
