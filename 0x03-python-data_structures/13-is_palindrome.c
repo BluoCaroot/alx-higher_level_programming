@@ -25,6 +25,11 @@ int is_palindrome(listint_t **head)
 	}
 	if (cnt % 2)
 		temp = temp->next;
+	else if (temp->n != temp->next->n)
+	{
+		return (0);
+	}
+
 	tmp = scnd;
 	for (i = 0; f && temp && tmp; ++i)
 	{
