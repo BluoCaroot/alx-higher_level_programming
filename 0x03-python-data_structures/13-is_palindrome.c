@@ -62,6 +62,6 @@ int equal(listint_t **first, listint_t **second)
 		t1 = t1->next;
 		t2 = t2->next;
 	}
-	free_listint(&scnd);
+	free_listint(first);
 	return (same);
 }
