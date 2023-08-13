@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 		add_nodeint(&scnd, temp->n);
 		temp = temp->next;
 	}
-	
+
 	if (equal(&scnd, head))
 		return (1);
 	return (0);
@@ -54,7 +54,7 @@ int equal(listint_t **first, listint_t **second)
 
 	t1 = *first, t2 = *second;
 
-	while(same && t1 && t2)
+	while (same && t1 && t2)
 	{
 		if (t1->n != t2->n)
 			same = 0;
@@ -62,6 +62,6 @@ int equal(listint_t **first, listint_t **second)
 		t1 = t1->next;
 		t2 = t2->next;
 	}
-	free_listint(first);
+	free_listint(*first);
 	return (same);
 }
