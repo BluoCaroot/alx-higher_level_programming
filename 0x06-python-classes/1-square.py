@@ -3,11 +3,13 @@
 
 
 class Square:
-    """Represent a square.
+    """Represent a square."""
 
-    Args:
-        size (int): the size of the square
-    """
 
     def __init__(slef, size):
+        """Initializes a new square
+
+        Args:
+            size (int): The size of the new square
+        """
         self.__size = size
