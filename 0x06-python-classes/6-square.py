@@ -12,8 +12,19 @@ class Square:
             size (int): The size of the new square
             position (int, int): cord of square
         """
-        self.__size = size
-        self.__position = position
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+        if (not isinstance(position, tuple) or
+                len(position) != 2 or
+                not all(isinstance(num, int) for num in position) or
+                not all(num >= 0 for num in position)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
 
     def area(self):
         """return area of square"""
