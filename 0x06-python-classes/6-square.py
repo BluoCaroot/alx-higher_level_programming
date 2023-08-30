@@ -17,23 +17,23 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.size = size
+            self.__size = size
         if (not isinstance(position, tuple) or
                 len(position) != 2 or
                 not all(isinstance(num, int) for num in position) or
                 not all(num >= 0 for num in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = position
+            self.__position = position
 
     def area(self):
         """return area of square"""
-        return (self.size ** 2)
+        return (self.__size ** 2)
 
     @property
     def size(self):
         """get/set size of square"""
-        return (self.size)
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -42,12 +42,12 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.size = value
+            self.__size = value
 
     @property
     def position(self):
         """gets/sets position"""
-        return (self.position)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -57,15 +57,15 @@ class Square:
                 not all(num >= 0 for num in vaule)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = value
+            self.__position = value
 
     def my_print(self):
         """prints square"""
-        for i in range(self.size):
-            for j in range(self.position[0]):
+        for i in range(self.__size):
+            for j in range(self.__position[0]):
                 print(" ", end="")
-            for j in range(self.size):
+            for j in range(self.__size):
                 print("#", end="")
             print("")
-        if self.size == 0:
+        if self.__size == 0:
             print("")
