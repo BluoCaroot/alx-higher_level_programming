@@ -51,12 +51,13 @@ class Rectangle:
             return ((self.__height + self.__width) * 2)
         else:
             return (0)
+
     def __str__(self):
         """Casts rectnalge to string"""
         x = '#' * self.__width
         ret = ''
         for i in range(self.__height):
             ret += x
-            if i < self.__height - 1
+            if i < self.__height - 1:
                 ret += '\n'
         return (ret)
