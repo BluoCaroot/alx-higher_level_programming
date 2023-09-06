@@ -59,7 +59,7 @@ class Rectangle:
         """Casts rectnalge to string"""
         if (self.__width == 0) or (self.__height == 0):
             return ('')
-        x = str(print_symbol) * self.__width
+        x = str(self.print_symbol) * self.__width
         ret = ''
         for i in range(self.__height):
             ret += x
