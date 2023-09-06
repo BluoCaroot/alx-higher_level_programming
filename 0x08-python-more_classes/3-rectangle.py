@@ -54,6 +54,8 @@ class Rectangle:
 
     def __str__(self):
         """Casts rectnalge to string"""
+        if (self.__width == 0) or (self.__height == 0):
+            return ('')
         x = '#' * self.__width
         ret = ''
         for i in range(self.__height):
