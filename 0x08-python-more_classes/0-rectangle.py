@@ -2,4 +2,5 @@
 """defines an empty class"""
 
 class Rectangle:
+    """emtpy calss"""
     pass
