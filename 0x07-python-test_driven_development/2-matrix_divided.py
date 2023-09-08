@@ -24,6 +24,8 @@ def matrix_divided(matrix, div):
     for i in matrix:
         if not isinstance(i, list):
             raise TypeError(error)
+        if len(i) == 0:
+            raise TypeError(error)
         for j in i:
             if not isinstance(j, int) and not isinstance(j, float):
                 raise TypeError(error)
