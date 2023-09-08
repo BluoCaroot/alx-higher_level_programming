@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """divides a matrix"""
 
+
 def matrix_divided(matrix, div):
     """ returns the result of dividing matrix by div
 
@@ -18,13 +19,16 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of
+                        integers/floats")
     for i in matrix:
         if not isinstance(i, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists)
+                            of integers/floats")
         for j in i:
             if not isinstance(j, int) and not isinstance(j, float):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix (list
+                                of lists) of integers/floats")
     for i in range(len(matrix) - 1):
         if (len(matrix[i]) != len(matrix[i + 1])):
             raise TypeError("Each row of the matrix must have the same size")
