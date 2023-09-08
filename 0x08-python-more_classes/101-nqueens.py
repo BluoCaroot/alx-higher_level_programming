@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 from sys import argv
+
 
 def solve(column, board, ans, y, xy, yx, n):
     if column == n:
@@ -8,7 +8,7 @@ def solve(column, board, ans, y, xy, yx, n):
         return
 
     for row in range(0, n):
-        if not y[row] and not xy[column + row] and not yx[n - 1 + column - row]:
+        if not (y[row] or xy[column + row] or yx[n - 1 + column - row]):
             y[row] = 1
             xy[column + row] = 1
             yx[n - 1 + column - row] = 1
@@ -23,7 +23,7 @@ if len(argv) != 2:
     print("Usage: nqueens N")
     exit(1)
 n = argv[1]
-if not  n.isdigit():
+if not n.isdigit():
     print("N must be a number")
     exit(1)
 n = int(n)
