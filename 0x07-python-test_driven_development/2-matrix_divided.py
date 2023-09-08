@@ -13,9 +13,22 @@ def matrix_divided(matrix, div):
         TypeError: if div not a number
         ZeroDivisionError: if div is zero
     """
-    if (not isinstance(div, int) and not isinstance(div float)):
+    if (not isinstance(div, int) and not isinstance(div, float)):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     for i in matrix:
-        if any x in i not isinstance(x, int)
+        if not isinstance(i, list):
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        for j in i:
+            if not isinstance(j, int) and not isinstance(j, float):
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    ret = []
+    for i in matrix:
+        temp = []
+        for j in i:
+            temp += [round(j / div, 2)]
+        ret += [temp]
+    return (ret)
