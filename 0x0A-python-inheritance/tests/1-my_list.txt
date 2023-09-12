@@ -52,4 +52,4 @@ NameError: name 'NULL' is not defined
 >>> my_list.append(None)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-TypeError: '<' not supported between instances of 'int' and 'NoneType'
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
