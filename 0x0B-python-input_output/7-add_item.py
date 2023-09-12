@@ -15,4 +15,3 @@ if __name__ == '__main__':
         x = []
     x.extend(argv[1:])
     save(x, 'add_item.json')
-
