@@ -8,8 +8,8 @@ def pascal_triangle(n):
     x = []
     ret = []
     if n <= 0:
-        return x
-    
+        return ret
+
     for i in range(n):
         for j in range(i + 1):
             if j == 0 or j == i:
