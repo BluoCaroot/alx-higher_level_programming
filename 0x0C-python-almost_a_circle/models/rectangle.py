@@ -8,6 +8,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructor"""
+
         super().__init__(id)
         self.width = width
         self.height = height
@@ -33,6 +34,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """gets/sets height"""
+
         return self.__height
 
     @height.setter
@@ -54,10 +56,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
 
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        elif not isinstance(x, int):
+        if not isinstance(x, int):
             raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0)")
         else:
             self.__x = x
 
@@ -70,9 +72,9 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
 
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        elif not isinstance(y, int):
+        if not isinstance(y, int):
             raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
         else:
             self.__y = y
