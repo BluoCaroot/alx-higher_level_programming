@@ -6,6 +6,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 
+
 class TestRectangleMethods(unittest.TestCase):
 
     def test_random(self):
@@ -34,8 +35,7 @@ class TestRectangleMethods(unittest.TestCase):
             Rectangle(20)
             Rectangle()
 
-
-    def test_constructor_one_arg(self):
+def test_constructor_one_arg(self):
         """ Test constructor with one argument """
         with self.assertRaises(TypeError) as e:
             r = Rectangle(1)
