@@ -93,4 +93,3 @@ class Rectangle(Base):
             for k in range(self.__width):
                 print("#", end="")
             print()
-
