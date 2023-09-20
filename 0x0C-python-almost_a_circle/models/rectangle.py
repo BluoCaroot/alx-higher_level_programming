@@ -98,4 +98,4 @@ class Rectangle(Base):
         """prints rectangle text"""
 
         return "[Rectangle] ({}) {}/{} - {}/{}"\
-                .format(self.id, self.x, self.y, self.width, self.height)
+            .format(self.id, self.x, self.y, self.width, self.height)
